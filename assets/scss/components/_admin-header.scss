@@ -1,0 +1,87 @@
+.header {
+  background-color: $admin-header;
+  color: $admin-background;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+  }
+
+  &__login-img {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+  }
+
+  .fas,
+  &__name-link {
+    color: $admin-background;
+    text-decoration: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__admin-img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  &__admin-login {
+    &:first-of-type,
+    &:nth-of-type(2) {
+      padding: 0 0.5rem;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__page-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__page {
+    padding: 1.5rem 4rem 0.5rem 0;
+  }
+
+  &__page-link {
+    text-decoration: none;
+    color: $admin-background;
+
+    &:after {
+      content: "";
+      display: block;
+      margin-top: 0.5rem;
+      width: 0;
+      height: 0.2rem;
+      background: $red;
+      transition: width 0.3s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

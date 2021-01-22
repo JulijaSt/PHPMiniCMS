@@ -1,0 +1,11 @@
+.main {
+  background-color: $admin-background;
+  padding: 2rem;
+  min-height: calc(100vh - 11.64rem);
+
+  &__wrapper {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+  }
+}

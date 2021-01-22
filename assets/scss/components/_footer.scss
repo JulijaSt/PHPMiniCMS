@@ -1,0 +1,20 @@
+.footer {
+  background-color: $admin-header;
+  color: $admin-background;
+  text-align: right;
+  padding: 1.25rem 2rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+  }
+}
