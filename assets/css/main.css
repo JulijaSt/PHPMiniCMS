@@ -149,4 +149,40 @@ body {
   max-width: 84rem;
   margin: 0 auto;
 }
+
+.main__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+
+.page-table {
+  font-size: 1.25rem;
+  width: 100%;
+}
+
+.page-table__head {
+  background-color: #ffecc4;
+  font-weight: 600;
+}
+
+.page-table__row, .page-table__column {
+  border-bottom: 2px solid #dddddd;
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: center;
+}
+
+.page-table__row--head, .page-table__column--head {
+  border: 0;
+}
+
+.page-table__column:first-child {
+  width: 25%;
+  text-transform: capitalize;
+}
+
+.page-table__body-row:hover {
+  background-color: #eeeeee;
+}
 /*# sourceMappingURL=main.css.map */

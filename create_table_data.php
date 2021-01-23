@@ -1,8 +1,6 @@
 <?php
 
-require "bootstrap.php";
-require "src/models/User.php";
-require "src/models/Page.php";
+require_once "bootstrap.php";
 
 use Models\Page;
 use Models\User;

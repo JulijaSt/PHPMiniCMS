@@ -46,7 +46,36 @@
     </header>
     <main class="main">
         <div class="main__wrapper">
-            Hello Admin!
+            <h1 class="main__title">Manage Pages</h1>
+            <table class="page-table">
+                <thead class="page-table__head">
+                    <tr class="page-table__row page-table__row--head">
+                        <th class="page-table__column page-table__column--head">Title</th>
+                        <th class="page-table__column page-table__column--head">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="page-table__body">
+                    <?php
+
+                    include_once "bootstrap.php";
+
+                    $page = $entityManager->getRepository('Models\Page')->findAll();
+
+                    if (count($page) > 0) {
+                        foreach ($page as $p)
+                            print("<tr class='page-table__body-row'>"
+                                . "<td class='page-table__column'>" . $p->getLink() . "</td>"
+                                . "<td class='page-table__column'></td>"
+                                . "</tr>");
+                    } else {
+                        print("<tr class='page-table__body-row'>
+                            <td class='page-table__column'></td>
+                            <td class='page-table__column'></td>
+                        </tr>");
+                    }
+                    ?>
+                <tbody>
+            </table>
         </div>
     </main>
     <footer class="footer footer--user">
