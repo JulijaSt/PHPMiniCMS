@@ -12,6 +12,40 @@
   &__title {
     font-size: 1.75rem;
     font-weight: 600;
-    padding-bottom: 2rem;
+    padding: 0 2rem 2rem 0;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__success {
+    width: 100%;
+    background-color: $green;
+    padding: 0.75rem 1.5rem;
+    color: $admin-background;
+    border-radius: 0.25rem;
+    border: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    text-transform: uppercase;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    position: relative;
+
+    &:hover {
+      background-color: $btn-focus;
+
+      &::before {
+        position: absolute;
+        content: "\f057";
+        font-family: "Font Awesome 5 Free";
+        color: $admin-background;
+        z-index: 1;
+        top: 0.75rem;
+        right: 1rem;
+      }
+    }
   }
 }

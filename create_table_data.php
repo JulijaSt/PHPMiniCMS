@@ -9,7 +9,6 @@ function createPage($entityManager, $pageName, $content)
 {
     $link = strtolower($pageName);
     $page = new Page($link);
-    $page->setTitle($pageName);
     $page->setContent($content);
     $entityManager->persist($page);
 }

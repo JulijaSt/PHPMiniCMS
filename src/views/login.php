@@ -1,17 +1,23 @@
 <?php
 include_once "bootstrap.php";
 
+$url = $_SERVER['REQUEST_URI'];
+$parseUrl = parse_url($url);
+$query = $parseUrl["query"];
+$splitUrl = explode("?" . $query, $url, -1);
+$pageLink = join("/", $splitUrl);
+
 $username_error = '';
 $password_error = '';
 
-$user = $products = $entityManager->getRepository('Models\User')->findBy(array('username' => 'admin'));
+$user = $entityManager->getRepository('Models\User')->findBy(array('username' => 'admin'));
 
 if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {	
     if ($_POST['username'] == $user[0]->getUsername() && $_POST['password'] == $user[0]->getPassword()) {
         $_SESSION['logged_in'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['username'] = 'Admin';
-        header('location: admin');
+        header('location:' . $pageLink);
 	    exit;
     } elseif ($_POST['username'] != $user[0]->getUsername() && $_POST['password'] != $user[0]->getPassword()) {
         $username_error = 'Wrong username';

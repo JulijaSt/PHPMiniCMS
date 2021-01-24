@@ -20,36 +20,21 @@ class Page
     /**
      * @ORM\Column(type="string")
      */
-    private $link;
-
-    /**
-     * @ORM\Column(type="string")
-     */
     private $title;
 
     /**
-     * @ORM\Column(type="text", length=16777215)
+     * @ORM\Column(type="text", length=16777215, nullable=true)
      */
     private $content;
 
-    public function __construct($link)
+    public function __construct($title)
     {
-        $this->link = $link;
+        $this->title = $title;
     }
 
     public function getPageId()
     {
         return $this->page_id;
-    }
-
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    public function setLink($link)
-    {
-        $this->name = $link;
     }
 
     public function getTitle()

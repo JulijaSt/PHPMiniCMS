@@ -156,6 +156,10 @@ body {
   margin-bottom: 2rem;
 }
 
+.input--edit {
+  width: 100%;
+}
+
 .input:hover {
   border: 2px solid #2b89e0;
 }
@@ -213,7 +217,48 @@ body {
 .main__title {
   font-size: 1.75rem;
   font-weight: 600;
-  padding-bottom: 2rem;
+  padding: 0 2rem 2rem 0;
+}
+
+.main__title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.main__success {
+  width: 100%;
+  background-color: #3ec171;
+  padding: 0.75rem 1.5rem;
+  color: #f9f9fb;
+  border-radius: 0.25rem;
+  border: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.main__success:hover {
+  background-color: #309e5a;
+}
+
+.main__success:hover::before {
+  position: absolute;
+  content: "\f057";
+  font-family: "Font Awesome 5 Free";
+  color: #f9f9fb;
+  z-index: 1;
+  top: 0.75rem;
+  right: 1rem;
 }
 
 .page-table {

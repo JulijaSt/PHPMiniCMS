@@ -1,7 +1,6 @@
 <?php
 
-include_once "bootstrap.php";
-
+require_once "bootstrap.php";
 $request = $_SERVER['REQUEST_URI'];
 $baseUrl = "/" . basename(getcwd());
 $parseUrl = parse_url($request);
@@ -16,6 +15,10 @@ switch ($request) {
     case $baseUrl . '/admin':
     case $baseUrl . '/admin?' . $query:
         require __DIR__ . '\src\views\admin.php';
+        break;
+    case $baseUrl . '/admin/edit-page':
+    case $baseUrl . '/admin/edit-page?' . $query:
+        require __DIR__ . '\src\views\editPage.php';
         break;
     default:
         http_response_code(404);
