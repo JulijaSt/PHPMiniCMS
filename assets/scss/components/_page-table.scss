@@ -7,6 +7,15 @@
     font-weight: 600;
   }
 
+  &__column:first-child {
+    width: 35%;
+    text-transform: capitalize;
+  }
+
+  &__column:nth-child(2) {
+    text-align: left;
+  }
+
   &__row,
   &__column {
     border-bottom: 2px solid $border;
@@ -15,19 +24,24 @@
     text-align: center;
 
     &--head {
-        border: 0;
-        padding: 1.2rem;
+      border: 0;
+      padding: 1.2rem;
+      text-align: center;
     }
-  }
 
-  &__column:first-child {
-    width: 25%;
-    text-transform: capitalize;
+    &--head:nth-child(2) {
+      text-align: center;
+    }
   }
 
   &__body-row {
     &:hover {
       background-color: $row-hover;
     }
+  }
+
+  &__edit-link {
+    text-decoration: none;
+    display: inline-block;
   }
 }

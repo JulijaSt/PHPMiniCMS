@@ -24,7 +24,9 @@ function redirect_to_root($adminHome)
 $pageParameter = array(
     "title" => "",
     "submitName" => "",
-    "message" => ""
+    "message" => "",
+    "pageTitle" => "",
+    "content" => ""
 );
 
 if (isset($_GET["action"]) and $_GET["action"] == "add") {
@@ -42,7 +44,7 @@ if (isset($_GET["action"]) and $_GET["action"] == "add") {
     }
 }
 
-if(isset($_GET['delete'])){
+if (isset($_GET['delete'])) {
     $page = $entityManager->find('Models\Page', $_GET['delete']);
     $entityManager->remove($page);
     $_SESSION['success_message'] = "Page Deleted";
@@ -50,6 +52,30 @@ if(isset($_GET['delete'])){
     redirect_to_root($adminHome);
 }
 
+if (isset($_GET['update'])) {
+    $page = $entityManager->find('Models\Page', $_GET['update']);
+
+    $pageParameter["title"] = "Update Page";
+    $pageParameter["submitName"] = "update";
+    $pageParameter["message"] = "Page Updated";
+    $pageParameter["pageTitle"] = $page->getTitle();
+    $pageParameter["content"] = $page->getContent();
+}
+
+if (isset($_POST["update"])) {
+    $pageParameter["pageTitle"] = $_POST["title"];
+    $pageParameter["content"] = $_POST["content"];
+    $id = $_GET["update"];
+
+    if (!empty($_POST['title'])) {
+        $page = $entityManager->find('Models\Page', $id);
+        $page->setTitle($pageParameter["pageTitle"]);
+        $page->setContent($pageParameter["content"]);
+        $_SESSION['success_message'] = $pageParameter["message"];
+        $entityManager->flush();
+        redirect_to_root($adminHome);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +108,11 @@ if(isset($_GET['delete'])){
                 <form action="" method="post" class="editPage">
                     <div class="login__input-wrapper">
                         <label for="title" class="label">Title</label>
-                        <input type="text" class="input input--edit" name="title" value="<?php if (isset($_POST['title'])) print($_POST['title']) ?>" required>
+                        <input type="text" class="input input--edit" name="title" value="<?php if (isset($pageParameter["pageTitle"])) print($pageParameter["pageTitle"]) ?>" required>
                     </div>
                     <div class="login__input-wrapper">
                         <label for="content" class="label">Content</label>
-                        <input type="text" class="input input--edit" name="content"></br>
+                        <input type="text" class="input input--edit" value="<?php if (isset($pageParameter["content"])) print($pageParameter["content"]) ?>" name="content"></br>
                     </div>
                     <input class="btn" type="submit" name="<?php print($pageParameter["submitName"]) ?>" value="<?php print($pageParameter["title"]) ?>" />
                 </form>

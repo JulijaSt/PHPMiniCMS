@@ -4,7 +4,13 @@ include_once "bootstrap.php";
 $url = $_SERVER['REQUEST_URI'];
 $parseUrl = parse_url($url);
 $query = $parseUrl["query"];
-$splitUrl = explode("?" . $query, $url, -1);
+$queryEqual = strpos($url, "&");
+
+if($queryEqual) {
+    $splitUrl = explode("&action=logout", $url, -1);
+} else {
+    $splitUrl = explode("?" . $query, $url, -1);
+}
 $pageLink = join("/", $splitUrl);
 
 $username_error = '';

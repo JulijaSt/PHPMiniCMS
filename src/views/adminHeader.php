@@ -2,6 +2,9 @@
 $url = $_SERVER['REQUEST_URI'];
 $baseUrl = "/" . basename(getcwd());
 $adminHome = $baseUrl . "/admin";
+$parseUrl = parse_url($url);
+$query = $parseUrl["query"];
+$querySimbol = $query ? "&" : "?"
 ?>
 
 <header class="header">
@@ -14,7 +17,8 @@ $adminHome = $baseUrl . "/admin";
                         <a href="<?php print($adminHome)?>" class="header__login-link fas fa-home"></a>
                     </li>
                     <li class="header__admin-login">
-                        <a href=" <?php print($url)?>?action=logout" class="header__login-link fas fa-sign-out-alt"></a>
+                        <a href=" 
+                        <?php print($url . $querySimbol)?>action=logout" class="header__login-link fas fa-sign-out-alt"></a>
                     </li>
                     <li class="header__admin-login">
                         <img src=<?php ($url == $adminHome) ? print("assets/img/admin.png") : print("../assets/img/admin.png")?>

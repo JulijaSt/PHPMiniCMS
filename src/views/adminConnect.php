@@ -30,16 +30,20 @@ include "adminHeader.php";
                 $page = $entityManager->getRepository('Models\Page')->findAll();
 
                 if (count($page) > 0) {
-                    foreach ($page as $p)
+                    foreach ($page as $p) {
                         print("<tr class='page-table__body-row'>
                                     <td class='page-table__column'>" . $p->getTitle() . "</td>
-                                    <td class='page-table__column'>"
+                                    <td class='page-table__column'>
+                                    <a class='page-table__edit-link' href='admin/edit-page?update={$p->getPageId()}'>
+                                        <button class='btn btn--update'>Update</button>
+                                    </a>"
                                     .($p->getTitle() != "home" ?
-                                        "<a href='admin/edit-page?delete={$p->getPageId()}'>
+                                        "<a class='page-table__edit-link' href='admin/edit-page?delete={$p->getPageId()}'>
                                             <button class='btn btn--delete' onclick='return confirm(\"Are you sure you want to delete this page?\")'>Delete</button>
                                         </a>" : "") .
-                                    "</td>
+                                "</td>
                                 </tr>");
+                    };
                 } else {
                     print("<tr class='page-table__body-row'>
                             <td class='page-table__column'></td>
