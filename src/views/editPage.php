@@ -42,6 +42,14 @@ if (isset($_GET["action"]) and $_GET["action"] == "add") {
     }
 }
 
+if(isset($_GET['delete'])){
+    $page = $entityManager->find('Models\Page', $_GET['delete']);
+    $entityManager->remove($page);
+    $_SESSION['success_message'] = "Page Deleted";
+    $entityManager->flush();
+    redirect_to_root($adminHome);
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -202,6 +202,16 @@ body {
   border: 2px solid #0465be;
 }
 
+.btn--delete {
+  background-color: #e44d56;
+  border: 2px solid #e44d56;
+}
+
+.btn--delete:hover, .btn--delete:focus {
+  background-color: #c2313b;
+  border: 2px solid #c2313b;
+}
+
 .main {
   background-color: #f9f9fb;
   padding: 2rem;
@@ -274,12 +284,13 @@ body {
 .page-table__row, .page-table__column {
   border-bottom: 2px solid #dddddd;
   border-collapse: collapse;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   text-align: center;
 }
 
 .page-table__row--head, .page-table__column--head {
   border: 0;
+  padding: 1.2rem;
 }
 
 .page-table__column:first-child {

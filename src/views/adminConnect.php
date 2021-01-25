@@ -9,6 +9,7 @@ include "adminHeader.php";
                 print("<button class='main__success' onclick='document.querySelector(\".main__success\").style.display=\"none\";'>" . $_SESSION['success_message'] . "</button>");
                 unset($_SESSION['success_message']);
             }
+            
         ?>
         <div class="main__title-wrapper">
             <h1 class="main__title">Manage Pages</h1>
@@ -30,10 +31,15 @@ include "adminHeader.php";
 
                 if (count($page) > 0) {
                     foreach ($page as $p)
-                        print("<tr class='page-table__body-row'>"
-                            . "<td class='page-table__column'>" . $p->getTitle() . "</td>"
-                            . "<td class='page-table__column'></td>"
-                            . "</tr>");
+                        print("<tr class='page-table__body-row'>
+                                    <td class='page-table__column'>" . $p->getTitle() . "</td>
+                                    <td class='page-table__column'>"
+                                    .($p->getTitle() != "home" ?
+                                        "<a href='admin/edit-page?delete={$p->getPageId()}'>
+                                            <button class='btn btn--delete' onclick='return confirm(\"Are you sure you want to delete this page?\")'>Delete</button>
+                                        </a>" : "") .
+                                    "</td>
+                                </tr>");
                 } else {
                     print("<tr class='page-table__body-row'>
                             <td class='page-table__column'></td>
