@@ -110,6 +110,89 @@ body {
   width: 100%;
 }
 
+.user-header {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  padding: 0.75rem 2rem;
+}
+
+.user-header__wrapper {
+  width: 100%;
+  max-width: 84rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-header__name {
+  font-size: 2rem;
+  font-weight: 500;
+  padding-right: 2rem;
+}
+
+.user-header__name-link {
+  color: black;
+  text-decoration: none;
+}
+
+.user-header__name-link:hover {
+  color: #e44d56;
+}
+
+.user-header__page-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-header__pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-header__page {
+  padding: 0 1rem;
+}
+
+.user-header__page:last-of-type {
+  padding-right: 0;
+}
+
+.user-header__link {
+  text-decoration: none;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.user-header__link--active {
+  color: #c4c4c4;
+}
+
+.user-header__link:active {
+  color: #c4c4c4;
+}
+
+.user-header__link:hover {
+  color: #e44d56;
+}
+
 .footer {
   background-color: #2b89e0;
   color: #f9f9fb;
@@ -130,6 +213,12 @@ body {
   position: relative;
   z-index: 1;
   text-transform: uppercase;
+}
+
+.footer--user {
+  background-color: #fff;
+  color: #000;
+  font-weight: 500;
 }
 
 .footer__wrapper {
@@ -222,6 +311,11 @@ body {
   background-color: #f9f9fb;
   padding: 2rem;
   min-height: calc(100vh - 11.64rem);
+}
+
+.main--user {
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 6.75rem);
 }
 
 .main__wrapper {

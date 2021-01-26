@@ -12,6 +12,12 @@
   z-index: 1;
   text-transform: uppercase;
 
+  &--user {
+    background-color: $white;
+    color: $black;
+    font-weight: 500;
+  }
+
   &__wrapper {
     width: 100%;
     max-width: 84rem;

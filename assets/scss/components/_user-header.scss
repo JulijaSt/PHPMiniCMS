@@ -1,0 +1,67 @@
+.user-header {
+  background-color: $white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  padding: 0.75rem 2rem;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-right: 2rem;
+  }
+
+  &__name-link {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__page-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+  }
+
+  &__page {
+    padding: 0 1rem;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+    text-transform: capitalize;
+
+    &--active {
+      color: $active-text;
+    }
+
+    &:active {
+      color: $active-text;
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

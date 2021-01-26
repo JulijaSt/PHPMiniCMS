@@ -3,6 +3,11 @@
   padding: 2rem;
   min-height: calc(100vh - 11.64rem);
 
+  &--user {
+    background-color: $user-background;
+    min-height: calc(100vh - 6.75rem);
+  }
+
   &__wrapper {
     width: 100%;
     max-width: 84rem;

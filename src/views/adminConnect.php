@@ -57,5 +57,6 @@ include "adminHeader.php";
 </main>
 
 <?php
-include "adminFooter.php";
+include "footer.php";
+footer("footer");
 ?>

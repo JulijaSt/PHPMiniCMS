@@ -120,7 +120,8 @@ if (isset($_POST["update"])) {
         </main>
 
         <?php
-        include "adminFooter.php";
+        include "footer.php";
+        footer("footer");
         ?>
 
     <?php
