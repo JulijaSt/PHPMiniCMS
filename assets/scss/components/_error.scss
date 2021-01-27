@@ -1,0 +1,60 @@
+.error-wrapper {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 6rem);
+    margin: 3rem;
+
+    @media (max-width: 568px) {
+        margin: 1rem;
+    }
+}
+
+.error404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+
+    &__img {
+        max-width: 100%;
+    }
+
+    &__title {
+        font-size: 7rem;
+        font-weight: 700;
+
+        @media (max-width: 568px) {
+            font-size: 4rem;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        padding-left: 2rem;
+
+        @media (max-width: 568px) {
+            font-size: 1.5rem;
+            text-align: center;
+            padding-left: 0;
+        }
+    }
+
+    &__info {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-weight: 500;
+
+        &:first-of-type {
+            padding-top: 2rem;
+        }
+
+        &:last-of-type {
+            padding-bottom: 1.75rem;
+        }
+    }
+
+    .btn {
+        margin: 1.15rem 0 2rem;
+    }
+}
