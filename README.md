@@ -33,9 +33,11 @@ WYSWYG ("TinyMCE") text editor was used to facilitate administrator text formatt
 5. Create initial data: </br>
 `php create_table_data.php` 
 
-6. Install and run xampp/wamp/ampps.
+6. Check that the data has been created in the database.
 
-7. Go to the browser using this link with `yourDirectoryName`, where you can see user pages: </br> 
+7. Install and run xampp/wamp/ampps.
+
+8. Go to the browser using this link with `yourDirectoryName`, where you can see user pages: </br> 
 `http://localhost/yourDirectoryName/` </br> </br>
 or go to the browser using this link: </br>
 `http://localhost/yourDirectoryName/admin` </br>
