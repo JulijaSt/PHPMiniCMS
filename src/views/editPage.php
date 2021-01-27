@@ -37,6 +37,9 @@ if (isset($_GET["action"]) and $_GET["action"] == "add") {
     if (isset($_POST['add']) && !empty($_POST['title'])) {
         $link = strtolower($_POST['title']);
         $page = new Page($link);
+        if ($_POST['content']) {
+            $page->setContent($_POST['content']);
+        }
         $_SESSION['success_message'] = $pageParameter["message"];
         $entityManager->persist($page);
         $entityManager->flush();

@@ -1,0 +1,8 @@
+@mixin headings($font-size, $font-weight) {
+    line-height: 1.2;
+    margin: 0;
+    font: {
+        size: $font-size;
+        weight: $font-weight;
+    }
+}

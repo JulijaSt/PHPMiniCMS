@@ -9,6 +9,7 @@ $query = $parseUrl["query"];
 $specificPageUrl = explode("/", $request);
 $number = count($specificPageUrl) - 1;
 
+
 if ($request == ($baseUrl . '/') || $request == ($baseUrl . '')) {
     require __DIR__ . '\src\views\home.php';
 } elseif ($request == ($baseUrl . '/admin') || $request == ($baseUrl . '/admin?' . $query)) {
@@ -17,12 +18,18 @@ if ($request == ($baseUrl . '/') || $request == ($baseUrl . '')) {
     require __DIR__ . '\src\views\editPage.php';
 } else {
     $page = $entityManager->getRepository('Models\Page')->findBy(array("title" => $specificPageUrl[$number]));
-    $specificPage = $page[0] ? $page[0]->getTitle() : "";
+    if ($page[0]) {
+        if ($page[0]->getTitle() == "home") {
+            $specificPage = "";
+        } else {
+            $specificPage = $page[0]->getTitle();
+        }
+    }
 
     if ($request == ($baseUrl . '/' . $specificPage)) {
         require __DIR__ . '\src\views\home.php';
     } else {
         http_response_code(404);
         require __DIR__ . '\src\views\404.php';
-    } 
+    }
 }

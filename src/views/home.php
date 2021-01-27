@@ -1,5 +1,11 @@
 <?php
 require_once "bootstrap.php";
+
+$url = str_replace("%20", " ", $_SERVER['REQUEST_URI']);
+$baseUrl = "/" . basename(getcwd());
+$specificPageUrl = explode("/", $request);
+$number = count($specificPageUrl) - 1;
+
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +24,27 @@ require_once "bootstrap.php";
 <body>
     <?php
     include "userHeader.php";
+
+    if (!$specificPageUrl[$number]) {
+        $page = $entityManager->getRepository('Models\Page')->findBy(array("title" => "home"));
+    } else {
+        $page = $entityManager->getRepository('Models\Page')->findBy(array("title" => $specificPageUrl[$number]));
+    }
     ?>
 
     <main class="main main--user">
-        <div class="main__wrapper">
-            Home
+        <?php
+        if ($page[0]->getTitle() == "home") {
+            print("<div class='hero'><h1 class='hero__title'>Bring your ideas to life!!!</h1></div>");
+        }
+        ?>
+        <div class="main__wrapper main__wrapper--user">
+            <?php
+            if ($page[0]->getTitle() != "home") {
+                print("<h1 class='main__title main__title--page'>" . $page[0]->getTitle() . "</h1>");
+            }
+            ?>
+            <div class="main__page-content"><?php print $page[0]-> getContent() ?></div>
         </div>
     </main>
 

@@ -18,10 +18,11 @@ $number = count($specificPageUrl) - 1;
                 <?php
                 if (count($page) > 1) {
                     foreach ($page as $p) {
+                        $pageLink = $p->getTitle() == "home" ? "" :  $p->getTitle();
                         print("<li class='user-header__page'>
-                                    <a href='" . $baseUrl . "/" . $p->getTitle()
+                                    <a href='" . $baseUrl . "/" . $pageLink
                             . "'class='user-header__link " . ($specificPageUrl[$number] == $p->getTitle()
-                             || ($p->getPageId() == 1 && $specificPageUrl[$number] == "") ? "user-header__link--active" : "") . "'>"
+                            || ($p->getPageId() == 1 && $specificPageUrl[$number] == "") ? "user-header__link--active" : "") . "'>"
                             . $p->getTitle() . "</a>
                                 </li>");
                     };

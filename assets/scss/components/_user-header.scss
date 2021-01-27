@@ -3,12 +3,12 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 1;
-  padding: 0.75rem 2rem;
 
   &__wrapper {
     width: 100%;
-    max-width: 84rem;
+    max-width: 90rem;
     margin: 0 auto;
+    padding: 0.71rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,9 +21,6 @@
   }
 
   &__name-link {
-    color: black;
-    text-decoration: none;
-
     &:hover {
       color: $red;
     }
@@ -48,8 +45,6 @@
   }
 
   &__link {
-    text-decoration: none;
-    color: $black;
     text-transform: capitalize;
 
     &--active {

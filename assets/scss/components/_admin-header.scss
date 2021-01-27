@@ -4,13 +4,13 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 1;
-  padding: 0 2rem;
 
   &__wrapper {
     width: 100%;
-    max-width: 84rem;
+    max-width: 90rem;
     margin: 0 auto;
     padding-top: 1rem;
+    padding: 1rem 3rem 0;
   }
 
   &__title {
@@ -67,7 +67,6 @@
   }
 
   &__page-link {
-    text-decoration: none;
     color: $admin-background;
 
     &:after {

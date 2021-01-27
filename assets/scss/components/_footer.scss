@@ -2,7 +2,6 @@
   background-color: $admin-header;
   color: $admin-background;
   text-align: right;
-  padding: 1.25rem 2rem;
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -20,7 +19,8 @@
 
   &__wrapper {
     width: 100%;
-    max-width: 84rem;
+    max-width: 90rem;
     margin: 0 auto;
+    padding: 1.25rem 3rem;
   }
 }

@@ -23,7 +23,7 @@ if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['passw
         $_SESSION['logged_in'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['username'] = 'Admin';
-        header('location:' . $pageLink);
+        header('location:' . ($pageLink ? $pageLink : $url));
 	    exit;
     } elseif ($_POST['username'] != $user[0]->getUsername() && $_POST['password'] != $user[0]->getPassword()) {
         $username_error = 'Wrong username';

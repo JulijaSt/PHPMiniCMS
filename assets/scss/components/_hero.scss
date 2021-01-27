@@ -1,0 +1,18 @@
+.hero {
+  background: url(../../img/hero.jpg);
+  height: 40vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+
+  &__title {
+    color: $white;
+    padding: 2rem 3rem;
+    margin: auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}

@@ -9,7 +9,6 @@ include "adminHeader.php";
                 print("<button class='main__success' onclick='document.querySelector(\".main__success\").style.display=\"none\";'>" . $_SESSION['success_message'] . "</button>");
                 unset($_SESSION['success_message']);
             }
-            
         ?>
         <div class="main__title-wrapper">
             <h1 class="main__title">Manage Pages</h1>

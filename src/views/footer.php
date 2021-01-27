@@ -3,7 +3,7 @@
 function footer($footer) {
     print ("<footer class='" .$footer . "'>
                 <div class='footer__wrapper'>
-                    <h6 class='footer__copyright'>copyright &copy" . date("Y") . " Mini CMS</h6>
+                    <p class='footer__copyright'>copyright &copy" . date("Y") . " Mini CMS</p>
                 </div>
             </footer>");
 }
