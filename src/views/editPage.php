@@ -89,9 +89,15 @@ if (isset($_POST["update"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/scss/components/reset.css">
     <link rel="stylesheet" href="../assets/dist/css/main.min.css">
     <title>Mini CMS</title>
+    <script src="https://cdn.tiny.cloud/1/rpid8tppa7hj890d4pkh2t9m7jjd8c5u60thymd74s3if3eh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+      selector: '#mytextarea',
+      
+    });
+  </script>
 </head>
 
 <body>
@@ -115,7 +121,7 @@ if (isset($_POST["update"])) {
                     </div>
                     <div class="login__input-wrapper">
                         <label for="content" class="label">Content</label>
-                        <input type="text" class="input input--edit" value="<?php if (isset($pageParameter["content"])) print($pageParameter["content"]) ?>" name="content"></br>
+                        <textarea id="mytextarea" class="tiny" name="content"><?php if (isset($pageParameter["content"])) print($pageParameter["content"]) ?></textarea></br>
                     </div>
                     <input class="btn" type="submit" name="<?php print($pageParameter["submitName"]) ?>" value="<?php print($pageParameter["title"]) ?>" />
                 </form>

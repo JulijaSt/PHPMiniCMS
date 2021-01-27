@@ -47,3 +47,8 @@ h5 {
 h6 {
     @include headings($font-size: 16px, $font-weight: 500);
 }
+
+p {
+    @include headings($font-size: 16px, $font-weight: 500);
+    padding:  0 0 1.5rem;
+}

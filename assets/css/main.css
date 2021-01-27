@@ -1,3 +1,184 @@
+/* stylelint-disable */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* stylelint-enable */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -67,6 +248,14 @@ h6 {
   font-weight: 500;
 }
 
+p {
+  line-height: 1.2;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 0 1.5rem;
+}
+
 .header {
   background-color: #2b89e0;
   color: #f9f9fb;
@@ -80,8 +269,7 @@ h6 {
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
-  padding-top: 1rem;
-  padding: 1rem 3rem 0;
+  padding: 0.8rem 3rem 0;
 }
 
 .header__title {
@@ -91,9 +279,9 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .header__login {
@@ -111,11 +299,6 @@ h6 {
   fill: white;
 }
 
-.header .fas, .header__name-link {
-  color: #f9f9fb;
-  text-decoration: none;
-}
-
 .header .fas:hover, .header__name-link:hover {
   color: #e44d56;
 }
@@ -125,6 +308,10 @@ h6 {
   height: 3.5rem;
 }
 
+.header__admin-login {
+  margin-bottom: 0;
+}
+
 .header__admin-login:first-of-type, .header__admin-login:nth-of-type(2) {
   padding: 0 0.5rem;
 }
@@ -132,6 +319,7 @@ h6 {
 .header__name {
   font-size: 2rem;
   font-weight: 500;
+  padding-top: 0.5rem;
 }
 
 .header__page-nav {
@@ -144,7 +332,7 @@ h6 {
 }
 
 .header__page {
-  padding: 1.5rem 4rem 0.5rem 0;
+  padding: 0.9rem 4rem 0.5rem 0;
 }
 
 .header__page-link {
@@ -247,7 +435,6 @@ h6 {
   background-color: #2b89e0;
   color: #f9f9fb;
   text-align: right;
-  font-size: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,7 +461,12 @@ h6 {
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
-  padding: 1.25rem 3rem;
+  padding: 1.16rem 3rem;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  padding: 0;
 }
 
 .label {
@@ -422,7 +614,7 @@ h6 {
   font-family: "Font Awesome 5 Free";
   color: #f9f9fb;
   z-index: 1;
-  top: 0.75rem;
+  top: 1rem;
   right: 1rem;
 }
 
